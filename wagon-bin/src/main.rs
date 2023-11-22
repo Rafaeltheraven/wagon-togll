@@ -1,10 +1,3 @@
-mod lexer;
-mod parser;
-mod codegen;
-mod firstpass;
-
-pub mod helpers;
-
 use std::env;
 use std::format;
 use std::fs;
@@ -12,7 +5,9 @@ use std::fs::File;
 use std::io::Write;
 use std::process::Command;
 
-use parser::WagParseError;
+use wagon_parser::parser::{WagParseError};
+use wagon_parser::parse_and_check;
+use wagon_codegen::{gen_parser, CodeMap};
 use proc_macro2::Ident;
 use proc_macro2::Span;
 use proc_macro2::TokenStream;
@@ -28,8 +23,10 @@ fn main() {
         false
     };
     let contents = fs::read_to_string(input_file).expect("Couldn't read file");
-    match codegen::gen_parser(&contents) {
-        Ok(data) => write_parser(data, proj_name, overwrite),
+    match parse_and_check(&contents) {
+        Ok(wag) => {
+            write_parser(gen_parser(wag), proj_name, overwrite)
+        },
         Err(e) => handle_error(e, input_file, contents),
     }
 }
@@ -51,7 +48,7 @@ fn handle_error(err: WagParseError, file_path: &str, file: String) {
         .unwrap();
 }
 
-fn write_parser(data: codegen::CodeMap, proj_name: &str, overwrite: bool) {
+fn write_parser(data: CodeMap, proj_name: &str, overwrite: bool) {
     let (subcode, code) = data;
     let root_terms = subcode.keys().collect();
     create_structure(proj_name, &root_terms, overwrite);
@@ -85,9 +82,26 @@ fn create_structure(proj_name: &str, terminals: &Vec<&String>, overwrite: bool) 
     if !exists {
         let libs = ["subprocess", "serde_json", "rand_dist", "itertools"];
         Command::new("cargo").args(["new", proj_name]).output().unwrap();
+        let mut toml = File::create(&path.join("Cargo.toml")).unwrap();
+        toml.write_all(format!(
+"[package]
+name = \"{}\"
+version = \"1.0.0\"
+edition = \"2021\"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+
+[dependencies]", proj_name).as_bytes()).unwrap();
         Command::new("cargo") 
             .current_dir(path)
-            .args(["add", "wagon-gll", "--path", "../../wagon_gll"])
+            .args(["add", "wagon-gll", "--path", "../wagon-gll"])
+            .output()
+            .unwrap();
+        Command::new("cargo") 
+            .current_dir(path)
+            .args(["add", "wagon-ident", "--path", "../wagon-ident"])
             .output()
             .unwrap();
         Command::new("cargo").current_dir(path).args(["add", "clap", "--features", "derive,cargo"]).output().unwrap();
