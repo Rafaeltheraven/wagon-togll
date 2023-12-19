@@ -1,0 +1,19 @@
+[package]
+name = "wagon-codegen-gll"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+categories.workspace = true
+keywords.workspace = true
+repository.workspace = true
+edition.workspace = true
+description = "Code Generation methods to create a WAG parser from a WAGon AST."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+wagon-parser = {workspace = true}
+wagon-ident = {workspace = true}
+proc-macro2 = {workspace = true}
+quote = {workspace = true}
+indexmap = {workspace = true}
