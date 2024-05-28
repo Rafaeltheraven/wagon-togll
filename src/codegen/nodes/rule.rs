@@ -8,7 +8,7 @@ use proc_macro2::{Ident, Span};
 use wagon_parser::parser::rule::Rule;
 use wagon_parser::SpannableNode;
 
-use crate::{CodeGenArgs, CodeGen, CodeGenResult, CodeGenError, CodeGenErrorKind};
+use crate::codegen::{CodeGenArgs, CodeGen, CodeGenResult, CodeGenError, CodeGenErrorKind};
 use std::rc::Rc;
 
 

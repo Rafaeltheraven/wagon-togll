@@ -1,0 +1,45 @@
+[package]
+name = "wagon-togll"
+version = "1.0.0"
+authors = ["Rafael Dulfer"]
+license = "Apache-2.0"
+categories = ["parsing", "parser-implementations"]
+keywords = ["parsing", "gll", "weighted attribute grammar"]
+repository = "https://github.com/Rafaeltheraven/wagon-togll"
+edition = "2021"
+documentation = "https://dulfer.be/wagon/wagon-togll"
+description = "Example of using the WAGon ecosystem to create GLL based parsers"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+wagon-parser = {path = "../wagon/wagon-parser"}
+wagon-ident = {path = "../wagon/wagon-ident"}
+wagon-value = {path = "../wagon/wagon-value"}
+wagon-codegen = {path = "../wagon/wagon-codegen"}
+wagon-utils = {path = "../wagon/wagon-utils", features = ["error_printing"]}
+wagon-macros = {path = "../wagon/wagon-macros"}
+clap = { version = "4.4.8", features = ["derive", "cargo"] }
+prettyplease = "0.2.15"
+proc-macro2 = "1.0.67"
+quote = "1.0.33"
+syn = "2.0.38"
+indexmap = "2.0.2"
+regex-automata = "0.4.5"
+regex = "1.10.3"
+
+[dev-dependencies]
+pretty_assertions = "1.4.0"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+enum_glob_use = "deny"
+pedantic = "warn"
+nursery = "deny"
+unwrap_used = "deny"
+expect_used = "warn"
+module_name_repetitions = "allow"
+panic = "warn"
+

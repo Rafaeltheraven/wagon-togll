@@ -12,7 +12,7 @@ mod nodes;
 /// Module for [`CodeGenState`], a struct which keeps state during codegen.
 mod state;
 
-use crate::state::CodeGenState;
+use state::CodeGenState;
 use std::{rc::Rc, collections::HashSet};
 use proc_macro2::{Ident, Literal, TokenStream};
 use quote::quote;
@@ -25,7 +25,7 @@ use wagon_value::{RecursiveValue, ValueError};
 use wagon_utils::{Span, ErrorReport, ConversionError};
 
 #[derive(Debug)]
-pub(crate) enum CharBytes {
+pub enum CharBytes {
 	Epsilon,
 	Bytes(Literal)
 }
@@ -48,7 +48,7 @@ type FullArgs = IndexSet<SpannableIdent>;
 #[derive(Default)]
 #[allow(clippy::struct_excessive_bools)]
 /// Configuration options for the final GLL parser.
-pub(crate) struct WeightConfig {
+pub struct WeightConfig {
 	/// Ignore the first/follow-set when choosing possible alternatives to parse.
 	no_first: bool,
 	/// Don't remove alternatives based on weight.
@@ -68,7 +68,7 @@ pub(crate) struct WeightConfig {
 ///
 /// Because Rust does not allow for variable arguments, but we still need a trait to implement on the nodes, we pass
 /// along this struct for any arguments we need from higher up in the chain.
-pub(crate) struct CodeGenArgs {
+pub struct CodeGenArgs {
 	/// The current state of the codegen.
 	pub(crate) state: CodeGenState,
 	/// Is this the first symbol of a rule?
@@ -97,7 +97,7 @@ pub(crate) struct CodeGenArgs {
 
 #[derive(Debug)]
 /// Enum for all errors that can occur during codegen.
-pub(crate) enum CodeGenErrorKind {
+pub enum CodeGenErrorKind {
 	/// Tried converting an [`Atom`] into a [`RecursiveValue`]
 	///
 	/// (this happens in [`nodes::metadata::atom_to_bool`](./nodes/metadata/fn.atom_to_bool.html)).

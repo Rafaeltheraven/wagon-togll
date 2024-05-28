@@ -8,7 +8,7 @@ use wagon_parser::parser::rhs::Rhs;
 use wagon_parser::SpannableNode;
 
 use wagon_codegen::ToTokensState;
-use crate::{CharBytes, CodeGen, CodeGenArgs, CodeGenError, CodeGenErrorKind, CodeGenResult, CodeGenState};
+use crate::codegen::{CharBytes, CodeGen, CodeGenArgs, CodeGenError, CodeGenErrorKind, CodeGenResult, CodeGenState};
 
 use std::rc::Rc;
 

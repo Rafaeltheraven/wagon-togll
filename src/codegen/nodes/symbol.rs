@@ -1,11 +1,6 @@
 
 use wagon_utils::Spannable;
-use crate::Block;
-use crate::BlockSize;
-use crate::FullArgs;
-use crate::Ident;
-use crate::PrevArgs;
-use crate::Rc;
+
 use std::matches;
 
 use quote::quote;
@@ -15,10 +10,11 @@ use wagon_parser::parser::{symbol::Symbol, terminal::Terminal};
 use wagon_parser::SpannableNode;
 use proc_macro2::{Literal, TokenStream};
 
-use crate::state::CodeGenState;
-use crate::{CodeGenArgs, CodeGen, CharBytes, CodeGenResult, CodeGenError, CodeGenErrorKind};
+use crate::codegen::state::CodeGenState;
+use crate::codegen::{CodeGenArgs, CodeGen, CharBytes, CodeGenResult, CodeGenError, CodeGenErrorKind, Block, BlockSize, FullArgs, PrevArgs};
+use crate::codegen::{Ident, Rc};
 
-type Counts = (crate::Symbol, Block, BlockSize);
+type Counts = (crate::codegen::Symbol, Block, BlockSize);
 
 type SymbolUuid = String;
 type RuleUuid = String;

@@ -1,6 +1,6 @@
 use wagon_parser::parser::wag::Wag;
 
-use crate::{CodeGenArgs, CodeGen, CodeGenResult};
+use crate::codegen::{CodeGenArgs, CodeGen, CodeGenResult};
 
 impl CodeGen for Wag {
     fn gen(self, gen_args: &mut CodeGenArgs) -> CodeGenResult<()> {

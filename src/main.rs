@@ -1,5 +1,8 @@
 #![allow(clippy::expect_used)]
 #![allow(clippy::panic)]
+
+mod codegen;
+
 use std::env;
 use std::format;
 use std::fs;
@@ -11,8 +14,8 @@ use std::process::Command;
 use clap::ArgMatches;
 use wagon_utils::handle_error;
 use wagon_parser::parse_and_check;
-use wagon_codegen_gll::gen_parser;
 use wagon_codegen::FileStructure;
+use crate::codegen::gen_parser;
 
 fn main() {
     let args = Box::leak(Box::new(parse_args()));

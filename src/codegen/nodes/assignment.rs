@@ -6,7 +6,7 @@ use wagon_parser::parser::assignment::Assignment;
 use quote::quote;
 
 use wagon_codegen::ToTokensState;
-use crate::{CodeGenState, CodeGenArgs, CodeGen, CodeGenResult, CodeGenErrorKind, CodeGenError};
+use crate::codegen::{CodeGenState, CodeGenArgs, CodeGen, CodeGenResult, CodeGenErrorKind, CodeGenError};
 
 impl CodeGen for SpannableNode<Assignment> {
 	fn gen(self, gen_args: &mut CodeGenArgs) -> CodeGenResult<()> {

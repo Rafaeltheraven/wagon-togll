@@ -4,7 +4,7 @@ use wagon_parser::parser::metadata::Metadata;
 use wagon_parser::parser::atom::Atom;
 use wagon_parser::SpannableNode;
 
-use crate::{CodeGenArgs, CodeGen, CodeGenResult, CodeGenError};
+use crate::codegen::{CodeGenArgs, CodeGen, CodeGenResult, CodeGenError};
 
 fn atom_to_bool(node: SpannableNode<Atom>) -> CodeGenResult<bool> {
     let span = node.span();

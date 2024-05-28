@@ -11,7 +11,7 @@ use quote::{quote, format_ident};
 
 use wagon_codegen::{FileStructure, SpannableIdent};
 
-use crate::{FirstSet, CharBytes, AttrSet, ReqCodeAttrs, ReqWeightAttrs, ReqFirstAttrs, CodeGenResult, CodeGenError, CodeGenErrorKind};
+use crate::codegen::{FirstSet, CharBytes, AttrSet, ReqCodeAttrs, ReqWeightAttrs, ReqFirstAttrs, CodeGenResult, CodeGenError, CodeGenErrorKind};
 
 const EMPTY_REPR: (Vec<String>, Vec<String>) = (Vec::new(), Vec::new());
 
