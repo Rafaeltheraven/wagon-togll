@@ -4,7 +4,7 @@ version = "1.0.0"
 authors = ["Rafael Dulfer"]
 license = "Apache-2.0"
 categories = ["parsing", "parser-implementations"]
-keywords = ["parsing", "gll", "weighted attribute grammar"]
+keywords = ["parsing", "gll", "WAG", "grammars"]
 repository = "https://github.com/Rafaeltheraven/wagon-togll"
 edition = "2021"
 documentation = "https://dulfer.be/wagon/wagon-togll"
@@ -13,12 +13,12 @@ description = "Example tool that uses the WAGon ecosystem to create GLL based pa
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-wagon-parser = {path = "../wagon/wagon-parser"}
-wagon-ident = {path = "../wagon/wagon-ident"}
-wagon-value = {path = "../wagon/wagon-value"}
-wagon-codegen = {path = "../wagon/wagon-codegen"}
-wagon-utils = {path = "../wagon/wagon-utils", features = ["error_printing"]}
-wagon-macros = {path = "../wagon/wagon-macros"}
+wagon-parser = "1.0.0"
+wagon-ident = "1.0.0"
+wagon-value = "1.0.0"
+wagon-codegen = "1.0.0"
+wagon-utils = {version = "1.0.0", features = ["error_printing"]}
+wagon-macros = "1.0.0"
 clap = { version = "4.4.8", features = ["derive", "cargo"] }
 prettyplease = "0.2.15"
 proc-macro2 = "1.0.67"
