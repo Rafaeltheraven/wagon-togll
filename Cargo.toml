@@ -8,7 +8,7 @@ keywords = ["parsing", "gll", "weighted attribute grammar"]
 repository = "https://github.com/Rafaeltheraven/wagon-togll"
 edition = "2021"
 documentation = "https://dulfer.be/wagon/wagon-togll"
-description = "Example of using the WAGon ecosystem to create GLL based parsers"
+description = "Example tool that uses the WAGon ecosystem to create GLL based parsers"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
