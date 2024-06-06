@@ -1,0 +1,2 @@
+# WAGon TOGLL
+An example implementation of the TOGLL algorithm as described in my [paper](https://dulfer.be/wagon/paper.pdf). Utilizes the [`wagon-gll`](https://github.com/Rafaeltheraven/wagon-gll/) library as well as the rest of the complete [`wagon`](https://github.com/Rafaeltheraven/wagon) ecosystem.
