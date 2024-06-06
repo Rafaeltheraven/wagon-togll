@@ -43,9 +43,9 @@ dependencies = [
 
 [[package]]
 name = "anstyle-query"
-version = "1.0.3"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a64c907d4e79225ac72e2a354c9ce84d50ebb4586dee56c82b3ee73004f537f5"
+checksum = "ad186efb764318d35165f1758e7dcef3b10628e26d41a44bc5550652e6804391"
 dependencies = [
  "windows-sys 0.52.0",
 ]
@@ -384,9 +384,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.84"
+version = "1.0.85"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ec96c6a92621310b51366f1e28d05ef11489516e93be030060e5fc12024a49d6"
+checksum = "22244ce15aa966053a896d1accb3a6e68469b97c7f33f284b99f0d576879fc23"
 dependencies = [
  "unicode-ident",
 ]
@@ -477,9 +477,9 @@ checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
 
 [[package]]
 name = "unicode-width"
-version = "0.1.12"
+version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "68f5e5f3158ecfd4b8ff6fe086db7c8467a2dfdac97fe420f2b7c4aa97af66d6"
+checksum = "0336d538f7abc86d282a4189614dfaa90810dfc2c6f6427eaf88e16311dd225d"
 
 [[package]]
 name = "utf8parse"
@@ -489,7 +489,9 @@ checksum = "711b9620af191e0cdc7468a8d14e709c3dcdb115b36f838e601583af800a370a"
 
 [[package]]
 name = "wagon-codegen"
-version = "0.1.0"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7bd014d78a1cb0c15cb6404f5f1778865f5c0413bb54dbe583d5bfe4d1d577d4"
 dependencies = [
  "ordered-float",
  "prettyplease",
@@ -502,7 +504,9 @@ dependencies = [
 
 [[package]]
 name = "wagon-ident"
-version = "0.1.0"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f61ccb84632d2cf1addfaf7778e0e0a91c26f1a8d53c81db1ae2721b01551f37"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -510,7 +514,9 @@ dependencies = [
 
 [[package]]
 name = "wagon-lexer"
-version = "0.1.0"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "899da8c882c469671226f06287902aba3f4d251b0c536189afae0101f109aea2"
 dependencies = [
  "logos",
  "logos-derive",
@@ -523,7 +529,9 @@ dependencies = [
 
 [[package]]
 name = "wagon-macros"
-version = "0.1.0"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "524ff3dbedbf2c8e988733f1a02f9949c248135ee7421f00c863d45c281b7a0c"
 dependencies = [
  "extendable-data",
  "paste",
@@ -534,7 +542,9 @@ dependencies = [
 
 [[package]]
 name = "wagon-parser"
-version = "0.1.0"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "adf0c57bcd8a84cf64602749c45ecf33b187fcfe49f685c2b472bf712269a212"
 dependencies = [
  "derivative",
  "indexmap",
@@ -574,7 +584,9 @@ dependencies = [
 
 [[package]]
 name = "wagon-utils"
-version = "0.1.0"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0635538f78935ef4fa356472e257564eea6b0dbf8fd3824ba5873a4bca3db9c6"
 dependencies = [
  "ariadne",
  "itertools",
@@ -582,7 +594,9 @@ dependencies = [
 
 [[package]]
 name = "wagon-value"
-version = "0.1.0"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5ab4c2d83cf00601077b90f3fa325e1e006121fe38fb704326edb5e1c548d3de"
 dependencies = [
  "num-traits",
  "ordered-float",
